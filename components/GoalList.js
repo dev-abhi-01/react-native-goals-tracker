@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import GoalItem from "./GoalItem";
 
 export default function ({ goalList, setGoalList }) {
@@ -8,7 +8,7 @@ export default function ({ goalList, setGoalList }) {
   }
 
   return (
-    <View style={style.goalList}>
+    <ScrollView style={style.goalList}>
       {goalList.map((goal) => (
         <GoalItem
           key={goal.id}
@@ -18,7 +18,7 @@ export default function ({ goalList, setGoalList }) {
           deleteGoalItem={deleteGoalItem}
         />
       ))}
-    </View>
+    </ScrollView>
   );
 }
 
