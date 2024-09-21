@@ -44,7 +44,7 @@ export default function ({ setGoalList, isModalVisible, setIsModalVisible }) {
         />
         <View style={style.buttonContainer}>
           <View style={style.button}>
-            <Button title="Add Goal" onPress={addGoal} color="#5e0acc" />
+            <Button title="Add Goal" onPress={addGoal} color="#c7b4e0" />
           </View>
           <View style={style.button}>
             <Button title="Cancel" onPress={cancelAddGoal} color="#f31282" />

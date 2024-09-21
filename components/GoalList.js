@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import GoalItem from "./GoalItem";
 
 export default function ({ goalList, setGoalList }) {
@@ -8,17 +8,21 @@ export default function ({ goalList, setGoalList }) {
   }
 
   return (
-    <ScrollView style={style.goalList}>
-      {goalList.map((goal) => (
-        <GoalItem
-          key={goal.id}
-          id={goal.id}
-          text={goal.text}
-          setGoalList={setGoalList}
-          deleteGoalItem={deleteGoalItem}
-        />
-      ))}
-    </ScrollView>
+    <View style={style.goalList}>
+      <FlatList
+        data={goalList}
+        renderItem={(itemData) => (
+          <GoalItem
+            key={itemData.item.id}
+            id={itemData.item.id}
+            text={itemData.item.text}
+            setGoalList={setGoalList}
+            deleteGoalItem={deleteGoalItem}
+          />
+        )}
+        keyExtractor={(goal) => goal.id}
+      />
+    </View>
   );
 }
 
